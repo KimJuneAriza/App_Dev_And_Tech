@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopSmart - Online Store</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0077b6" />
+  <link rel="icon" href="icons/icon-192.png" />
 </head>
 <body>
 
@@ -48,6 +51,16 @@
   <footer>
     <p>© 2025 ShopSmart. All rights reserved.</p>
   </footer>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then(reg => console.log('Service Worker registered', reg))
+        .catch(err => console.log('Service Worker registration failed', err));
+    }
+  </script>
 
 </body>
 </html>
